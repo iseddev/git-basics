@@ -384,7 +384,7 @@ git revert HEAD | git revert HEAD~1 | git revert HEAD~2 | ...
 <br><br>
 
 ---
-## 🔃 Gestion de ramas "***branches***" 🔃
+## Gestión de ramas (***branches***) 🔃
 <br>
 
 Cuando nuestro proyecto es robusto, cuenta con la colaboración de varios desarrolladores o por simple organización, se vuelve un poco complicado que se trabaje sobre una misma rama, pero, ¿qué es una rama? Bueno, lo primero a tener en cuenta es que en el momento en que creamos un repositorio en nuestro proyecto, por defecto se crea la rama principal ***main*** y podemos a comenzar a trabajar en nuestro desarrollo sin mayor contratiempo. Pero como se dijo anteriormente, si el proyecto lo requiere, es bueno pensar "*dividir*" el flujo de trabajo en varios "*micro entornos de desarrollo*", donde cada integrante del equipo realizará sus aportaciones al proyecto.  
@@ -392,23 +392,24 @@ Cuando nuestro proyecto es robusto, cuenta con la colaboración de varios desarr
 Una manera secilla de poder conceptualizar una rama es pensar en "*caminos*" o "*rutas*" de desarrollo *independientes*, pero que se mantienen en conexión al proyecto en general. Después de que en cada rama se llega un punto en el que el resultado es lo que se esperaba, se procede a la "fusión" a la rama principal.  
 
 Es por ello que en la gran mayoría de los Sistemas de Control de Versiones (incluyendo a Git), existen las ramas ("*branches*"). Esto ofrece una gran flexibilidad para no manipular directamente nuestro proyecto un sólo flujo (o rama), sino que tenemos la posibilidad de crear "ramificaciones" paralelas a nuestro proyecto y de esta manera podemos mantener un flujo de trabajo limpio y ordenado. Veamos los comando más utilizados en la gestión de ramas en Git:
+<hr>
 
-> Enlistar las ramas que existen dentro de nuestro proyecto
+>Enlistar las ramas que existen dentro de nuestro proyecto
 ```powershell
 git branch | git branch -l
 ```
+<hr>
 
-> Crear una nueva rama desde el punto donde estamos actualmente con el nombre especificado en `<branchName>`
+>Crear una nueva rama desde el punto donde estamos actualmente con el nombre especificado en `<branchName>`
 ```powershell
 git branch <branchName>
 ```
 **Notas:**  
 *Para poder crear una rama, es necesario haber confirmado por lo menos un commit dentro de nuestro proyecto*.  
 *La rama principal por defecto es **`main`**.*
+<hr>
 
-<br>
-
-> Crea una nueva rama desde el punto donde estamos actualmente con el nombre especificado en `<branchName>` y se mueve a esta rama
+>Crea una nueva rama desde el punto donde estamos actualmente con el nombre especificado en `<branchName>` y se mueve a esta rama
 ```powershell
 git checkout -b <branchName>
 ```
@@ -417,6 +418,7 @@ Hoy en día Git ha implementado el comando `switch`, por lo que la ejecución an
 ```powershell
 git switch -c <branchName>
 ```
+<hr>
 
 > Crea una nueva rama desde el punto donde estamos actualmente con el nombre especificado en `<branchName>`, en el commit especificado en `<hashCommitValue>` y se mueve a esta rama
 ```powershell
@@ -427,13 +429,15 @@ Hoy en día Git ha implementado el comando `switch`, por lo que la ejecución an
 ```powershell
 git switch -c <branchName> <hashCommitValue>
 ```
+<hr>
 
-> Eliminar la rama especificada en `<oldBranchName>` y se crea una nueva rama en su lugar con el nombre especificado en `<newBranchName>`
+>Eliminar la rama especificada en `<oldBranchName>` y se crea una nueva rama en su lugar con el nombre especificado en `<newBranchName>`
 ```powershell
 git branch -m <oldBranchName> <newbranchName>
 ```
+<hr>
 
-> Moverse a la rama especificada en `<branchName>` y se pasan las modificaciones pendientes a esta rama, ahora se podran confirmar y dichas confirmaciones quedarán establecidas en la rama a la que nos cambiamos
+>Moverse a la rama especificada en `<branchName>` y se pasan las modificaciones pendientes a esta rama, ahora se podran confirmar y dichas confirmaciones quedarán establecidas en la rama a la que nos cambiamos
 ```powershell
 git checkout <branchName>
 ```
@@ -442,18 +446,21 @@ Hoy en día Git ha implementado el comando `switch`, por lo que la ejecucuón an
 ```powershell
 git switch <branchName>
 ```
+<hr>
 
-> Eliminar la rama especificada en `<branchName>`
+>Eliminar la rama especificada en `<branchName>`
 ```powershell
 git branch -d <branchName>
 ```
+<hr>
 
-> Eliminar la rama especificada en `<branchName>` de forma "forzada"
+>Eliminar la rama especificada en `<branchName>` de forma "forzada"
 ```powershell
 git branch -D <branchName>
 ```
+<hr>
 
-> Crear/recuperar una rama eliminada (con sus estados y confirmaciones) con el nombre especificado en `<deletedBranchName>` y con el HASH especificado en `<hashCommitValue>`
+>Crear/recuperar una rama eliminada (con sus estados y confirmaciones) con el nombre especificado en `<deletedBranchName>` y con el HASH especificado en `<hashCommitValue>`
 ```powershell
 git branch -b <deletedBranchName> <hashCommitValue>
 ```
