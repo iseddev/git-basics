@@ -15,7 +15,7 @@ Para poder tener acceso a los conceptos generales más detallados, puedes consul
 - [Antes de iniciar](./content/antes_de_iniciar.md)
 - [Iniciar Git en tu proyecto](./content/iniciar_git.md)
 - [Primeros pasos](./content/primeros_pasos.md)
-- [Metiendo las manos al código](./content/comandos_git)
+- [Metiendo las manos al código](./content/comandos_git.md)
 - [Creando y modificando "commits"](./content/creando_commmits.md)
 
 ***Contenido pendiente de agregar...***
