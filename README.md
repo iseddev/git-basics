@@ -1,218 +1,25 @@
-# 💻 Curso básico Git by Alura Latam (ONE) 💻
+# 💻 Material de apoyo básico de Git 💻
 
-Repositorio del curso básico de GIT impartido por Alura Latam y Oracle Next Education (ONE). El objetivo de este repositorio es ofrecerte información básica (pero detallada) para que puedas usar éste potente Sistema de Control de Versiones (*VCS* "Version Control Systems").  
-Para poder tener acceso a información más detallada, puedes consultar la documentación oficial de GIT, disponible en la siguiente [página](https://git-scm.com/docs "Documentación oficial de GIT")<br><br>
+Repositorio con el objetivo de ofrecerte información básica para que puedas implementar en tus proyectos éste potente Sistema de Control de Versiones (*VCS* "Version Control Systems").  
+Para poder tener acceso a los conceptos generales más detallados, puedes consultar la documentación oficial de GIT, disponible en la siguiente [página](https://git-scm.com/docs "Documentación oficial de GIT")<br><br>
 
 ### *Observaciones* 🕵️‍♀️
 ✍ En este repositorio, se utiliza la notación `< >` para indicar que un comando/valor/nombre debe detallarse de acuerdo a las indicaciones dentro de `< >` y de las condiciones de tu proyecto. Por ejemplo: `<fileName.ext>` se refiere a que debes ingresar un nombre de archivo y su extensión.  
 ✍ La notación `" "` es utilizada para indicar que un fragmento de texto debe detallarse de acuerdo a las indicaciones dentro de los `" "` y de las condiciones de tu proyecto. Por ejemplo: `"Your Real Name"` quiere decir que "escribas" tu nombre real.<br><br>
 
-## Consideraciones iniciales 🤓
-Como todo buen programador, lo primero es manejar las herramientas esenciales para llevar a cabo tus proyectos. Una de estas herramientas es sin duda: la terminal. Al principio puede parecer intimidante, pero no es así. La terminal es una herramienta que te permite interactuar con tu sistema operativo y otros programas. En la terminal podrás ejecutar comandos, ver información de tu sistema y mucho más. Existen diversos comandos y herramientas de la terminal que te permitirán interactuar con GIT y el repositorio de tu proyecto. A continuación se enlistan algunos de los comandos básicos que utilizarás (y que con el tiempo y práctica dominarás) durante tu interacción con GIT.<br>
+## Índice
 
-### **Comandos básicos de la terminal 📟**
-Independientemente del Sistema Operativo (SO) en que te encuentres, como desarrollador debes tener un dominio aceptable del uso de la "**terminal**", "**línea de comandos**", etc.  
+- [Uso básico de la terminal de comandos (consola)](./content/terminal.md)
+- [Compatibilidad entre Sistemas Operativos](./content/compatibilidad.md)
+- [Conceptos básicos](./content/conceptos_basicos.md)
+- [Antes de iniciar](./content/antes_de_iniciar.md)
+- [Iniciar Git en tu proyecto](./content/iniciar_git.md)
+- [Primeros pasos](./content/primeros_pasos.md)
+- [Metiendo las manos al código](./content/comandos_git)
+- [Creando y modificando "commits"](./content/creando_commmits.md)
 
-Es importante que consideres, que para facilitar el uso de los comandos por "**terminal**" de tu proyecto, tienes que abrir la carpeta principal de tu proyecto en la "**terminal**".  
-
-La tabla siguiente enlista los comandos esenciales más utilizados en el manejo de archivos.
-
-Comando | Utilidad
---- | ---
-`ls` | Listar los archivos y carpetas que componen el directorio actual
-`ls -a` | Listar *todos* los archivos y carpetas que componen el directorio actual, incluyendo  los archivos *ocultos*.
-`pwd` | Conocer la ruta completa de la carpeta/directorio en la que te encuentras actualmente.
-`cd <directoryToMove>` | Moverte a un direcorio/carpeta específica dentro de tu directorio actual.
-`cd ..` | Regresar "una posición" hacia atrás a partir del directorio en el que te encuentras actualmente.
-`mkdir <directoryName>` | Creación de un directorio/carpeta dentro de tu posición actual.
-`touch <fileName.ext>` | Creación de un archivo con el nombre y extensión especificados en el directorio/carpeta actual.
-`mv <oldFileName> <newFileName>` | Comando para modificar/cambiar/actualizar el nombre de un archivo.
-`rm <fileName>` | Comando para eliminar un archivo que se encuentra dentro de tu directorio actual.
-`clear` | Comando para limpiar la pantalla de tu terminal.
-`git <comand> -h` | Comando para ver las "opciones" de configuración de "`<comand>`" disponibles y sus aplicaciones.
-
-
-### **Compatibilidad entre SO's 📳**
-
-Cuando te toque trabajar en un equipo con usuarios que utilizan diversos sistemas operativos como Windows, Linux, MacOS, etc., vas a toparte con la necesidad de estandarizar el "formato" en el que se guardan los cambios en los repositorios.
-
-En Windows se agregan 2 caracteres especiales cuando creamos un "salto de línea":
-* `CR` - Carriage Return
-* `LF` -  Line Feed
-
-Para el caso de Linux/MacOS, se agrega solo un caracter:  
-* `LF` - Line Feed
-
->Configuración en Windows:
-```powershell
-git config --global core.autocrlf true
-```
->Configuración en Linux/MacOS:
-```powershell
-git config --global core.autocrlf input
-```
->Listar las configuraciones "**globales**" que Git tiene definidas por defecto y las que estableciste anteriormente.
-```powershell
-git config --global -e
-```
-*Para más detalles del comando `git config` consulta [aquí](https://git-scm.com/docs/git-config "Documentación oficial")*.<br><br>
-
-## Conceptos básicos 🕶
-Se puede decir que un **repositorio** de GIT, es un "historial" (que inicialmente se guarda en tu equipo local) de determinados momentos en que decides que un cambio/proceso/actualización de tu proyecto debe estar disponible para su posterior consulta/modificación/eliminación. Es como tener una "cámara" que tomará una "foto instantánea" (un *commit*) de tu proceso de desarrollo cuando tú así lo consideres necesario y cada uno de estos *commits* son puntos de referencia que posteriormente te servirá para saber lo que sucedió hasta ese preciso momento. Esto lo puedes hacer las veces que consideres necesario hasta finalizar con tu proyecto.
-
-Para que comprendas el proceso de creación de un repositorio en GIT, es necesario que conozcas las "*etapas*" que conforman el procceso de creación de un "*commit*" o "confirmación". De forma general, en GIT existen 3 etapas (+1) que conforman el proceso de creación de un *commit* (el conjunto de todos tus *commits* formarán tu historial):
-1. ### **Working Directory**
-   El *Working Directory* o *Directorio de Trabajo*, es el directorio en el que GIT detecta las actualizaciones/cambios/procesos que aún no están consideradas como parte de tu historial y GIT las coloca de forma automática en esta etapa. Para indicarle a GIT que quieres que  considere dichos cambios en tu historial, debes utilizar el comando `git add` (y combinaciones de sus opciones).
-2. ### **Staging Area (index)**
-   Ahora nuestras actualizaciones/cambios/procesos se ecuentran dentro del *Staging Area* o *Área de preparación* (también llamado *index*), que es donde le indicas a GIT que quieres que dichos procesos se encuentren disponibles para su posterior confirmación e inclusión dentro del historial de tu proyecto, es decir: crear un punto de referencia o *commit*. Para tal efecto, le indicarás a GIT que realice este proceso mediante el comando `git commit` (y combinaciones de sus opciones).
-3. ### **Repository (local)**
-   En esta etapa, todos los cambios confirmados mediante `git commit ...` ya forman parte de tu repositorio local, es decir, que ya tienes en tu equipo, las "instantáneas" de tu proceso de desarrollo. Dentro de tu repositorio, ahora existen *puntos de control* que te ayudarán a "viajar" en el tiempo y poder verificar el estado en el que se encontraba tu proyecto en determinado momento y si es necesario, modificarlo de acuerdo a tus necesidades (recomendable hacer uso de ramas [**branchs**]).
-
-![Los tres estados de GIT](assets/images/index1@2x.png)
-
-Como ves, hasta cierto punto es sencillo entender la forma en la que se compone un repositorio creado con GIT, pero a lo largo de tus desarrollos, te darás cuenta que van a surgir diversos detalles y que deberás conocer a mayor profundidad los comandos que GIT te ofrece para darles solución.  
-Por otro lado, ¿qué pasará si por alguna razón, tu equipo/ordenador falla y no tienes acceso a todo el historial de uno o varios de tus proyectos? Para tener un respaldo de nuestro historial, existen servicios/plataformas como GitHub, GitLab, GitBucket, etc., en los que puedes "subir" y almacenar tu repositorio con todo el historial que tenías de forma local y de esta forma, ya seas tú mismo u otro usuario, puede *clonar* dicho repositorio y tenerlo disponible en su equipo y con ello, poder continuar con tu trabajo desde el último estado en que lo dejaste.<br><br>
-
-## Antes de iniciar con Git 🧱
-Ahora es momento de empezar a trabajar con GIT.
-
-Para ello, lo primero que tienes que hacer es verificar si tienes Git instalado en tu equipo, para ello basta con que ejecutes es tu terminal el comando: `git`, si lo tienes instalado, se desplegaran las opciones de comandos con las que Git cuenta.  
-
-Si no lo tienes instalado, dependiendo de tu SO, puedes instalarlo desde la terminal o puedes descargar GIT desde [aquí](https://git-scm.com/ "Descarga sitio oficial") y seguir las instrucciones para instalarlo en tu equipo. Regularmente la instalación de Git incluye la terminal GitBash, que podrás utilizar como tu terminal predeterminada.
-
->Validar la version de GIT instalada en tu equipo.
-```powershell
-git --version
-```
-<br>
-
-## Configuraciones Globales 📝
-Ya que has validado que tienes Git instalado en tu equipo, es tiempo de definir las configuraciones "****globales****" iniciales que GIT utilizará en cada uno de los repositorios creados. "**globales**", quiere decir que estas configuraciones se aplicaran a cada proyecto gestionado con Git desde tu equipo/ordenador.  
-
->Establecer el nombre de usuario
-```powershell
-git config --global user.name "Your Real Name"
-```
->Establecer tu correo electrónico
-```powershell
-git config --global user.email youremail@mail.com
-```
-
->Establecer editor de texto por defecto. *En algunos casos GIT abrirá el editor de texto configurado para ingresar información. En este caso, se configura VS Code.  Para ver las configuraciones más utilizadas, consulta [aquí](https://github.com/israUni/curso-basico-git/blob/main/editors-config.md "Configuracion editores de texto")*.
-```powershell
-git config --global core.editor "code --wait"
-```
-> Activar el uso de colores en la interfaz del usuario
-```powershell
-git config --global color.ui true
-```
-<br>
-
-## Comandos para la gestión inicial de tu proyecto 📲
-
-Ahora que ya te aseguraste que tienes GIT en tu equipo y has establecido las configuraciones globales básicas, puedes empezar a utilizar este potente Sistema de Control de Versiones en tus proyectos.  
-
-Como ya vimos anteriormente, al iniciar un repositorio dentro de tu proyecto, serás capaz de "moverte" entre cada "confirmación" (commit) que hayas definido.  
-
-A continuación se enlistan los comandos más utilizados en un proyecto con GIT y sus usos:
-
->Crear un directorio con el nombre `<directoryName>` e inicializar un repositorio dentro de este mismo directorio.
-```powershell
-git init <directoryName>
-```
-
->También puedes inicializar un repositorio dentro de tu directorio actual.
-```powershell
-git init
-```
-Una vez ejecutado el comando anterior, podrás ver en tu terminal algo parecido a esto:
-```powershell
-userName@pcNAme MINGW64 ~/Desktop/ProjectDirectoryName (main)
-$
-```
-*(main) se refiere a la "**rama principal**" de tu proyecto*. Más adelante hablaremos de las ramas.  
-<hr>
-
->Verificar el "estado" en el que se encuentra el seguimiento de nuestro proyecto.
-```powershell
-git status
-```
-<hr>
-
->Agregar un proceso a la etapa de *staging*.
-```powershell
-git add <fileName.ext>
-```
-<hr>
-
->Agregar **todos** los procesos/archivos a la etapa de *staging*.
-```powershell
-git add . | git add -A
-```
-<hr>
-
-> "*Eliminar*" un proceso de la etapa de *staging* (que se "agregó" con `git add <fileName> | git add . | git add -A`) y dicho proceso se *"regresa"* a la etapa "*working*".
-~~~powershell
-git rm --cached <fileName.ext>
-~~~
-*Esta ejecución elimina el archivo especificado de la etapa de "staging" pero dicho proceso de eliminación se regresa a la etapa de "staging" listo para ser confirmado("commiteado"). Después de esta ejecución, al utilizar `git status`, podrás ver algo como esto:*
-
-    userName@pcName MINGW64 ~/Desktop/ProjectDirectoryName (main)
-    git status
-    On branch main
-    Changes to be commited:
-      (use "git restore --staged <file>..." to unstage)
-            deleted:    fileName.ext
-    Untracked files:
-      (use "git add <file>..." to include in what will be commited)
-            fileName.ext
-<hr>
-
->"Sacar" de la etapa de *staging*(que se "agregó" con `git add <fileName> | git add . | git add -A`) un archivo/proceso y "pasarlo" a la etapa de *working*, sin ELIMINAR los cambios realizados hasta el momento y sin generar la eliminación del archivo como en el caso anterior.
-```powershell
-git restore --staged <fileName>
-```
-<hr>
-
->Eliminar los últimos *cambios* en un archivo que ya tuvo al menos una confirmación(commit) previa y que se ha modificado y ***NO*** se ha pasado a la etapa de *staging*, es decir, que no se ha utilizado el comando `git add <fileName> | git add . | git add -A` y su estado es "*M - modified*".
-```powershell
-git restore <filename>
-```
-<hr>
-
->Sacar el último proceso que está en la etapa de *staging* y pasarlos a la etapa de *working* sin perder los cambios realizados hasta el momento.
-```powershell
-git reset
-```
-<hr>
-
->Realizar confirmación (*commit*) en el editor de texto configurado detallando el mensaje correspondiente.
-```powershell
-git commit
-```
-<hr>
-
->Realizar confirmación (*commit*) detallando el mensaje correspondiente en la misma terminal.
-```powershell
-git commit -m "Print a descriptive message here"
-```
-*En ambas ejecuciones, cada *commit* creado contará con un **identificador** (hash) con el que posteriormente podremos acceder a él para realizar las acciones permitidas en un *commit*.*<br><br>
-<hr>
-
->"Alterar/modificar" el último *commit* realizado, agregándole "nuevos" cambios y definir un nuevo mensaje en el editor de texto configurado.
-```powershell
-git commit --amend
-```
-<hr>
-
->"Alterar/modificar" el último *commit* realizado, agregándole "nuevos" cambios y definir un nuevo mensaje en la misma terminal.
-```powershell
-git commit --amend -m "Message that will replace the previous one"
-```
-*En ambas ejecuciones, lo que sucede en realidad es que se elimina el último *commit*, se crea uno nuevo(con su propio hash) y éste último conserva los cambios de ambas confirmaciones junto con el mensaje establecido*.  
-*Para validar lo anterior, puedes ejecutar el comando `git reflog`, lo que te ayudara a desplegar en terminal "*todos*" los commits generados, incluso los que se hayan eliminado*.<br><br>
-<hr>
-
+***Contenido pendiente de agregar...***
+<!-- 
 >Mostrar detalles simplificados de las etapas en las que se encuentran nuestros procesos
 ```powershell
 git status -s
@@ -579,3 +386,4 @@ git checkout v0.0.1
 ```powershell
 git tag -d v0.0.1
 ```
+ -->
