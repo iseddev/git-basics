@@ -26,10 +26,13 @@ Por ejemplo, si creas la carpeta `Curses` en el *Escritorio*, es necesario que l
 Generalmente, abrir la terminal en una carpeta específica puede hacerse con "*click*" derecho del *mouse* sobre la capeta en cuestión y en el menú desplegable que aparece, basta con seleccionar "**Abrir en terminal**" o para el caso de tener instalado GitBash, la opción a elegir puede ser "**GitBash here**". Esto abrirá la terminal seleccionada y ya "***posicionada***" en la carpeta seleccionada.  
 
 Para el caso de haber elegido "**Abrir en terminal**", podrás ver algo como esto:
+
 ![Ejemplo terminal en Windows](../assets/images/terminal_01.PNG)
+
 *Nota*: Esta configuración de interfaz se logra mediante la implementación de [Oh My Posh](https://ohmyposh.dev/). Video tutorial [aquí](https://www.youtube.com/watch?v=d9y0l7yY404)  
 
 Para el ejemplo de GitBash, podrás ver algo como esto:
+
 ![Ejemplo GitBash en Windows](../assets/images/gitbash_01.png)  
 
 Existen otras maneras de posicionar la terminal en tu carpeta de trabajo (con el uso de la terminal por supuesto), pero ésta es la más accesible. Si observas las imágenes, notarás que ambos ejemplos indican que la terminal está posicionada enla carpeta/directorio `Curses`, que a su vez está dentro de `Desktop`, con esto nos aseguramos que los comandos ejecutados dentro de la terminal con esta configuración afectarán a la carpeta `Curses` y a las sub carpetas y archivos dentro de ella que se encuentran en ***primer nivel***.  
@@ -51,7 +54,7 @@ Comando | Utilidad
 `touch <fileName.ext>` | Creación de un archivo con el nombre y extensión especificados en el directorio/carpeta actual.
 `mv <oldFileName.ext> <newFileName.ext>` | Comando para modificar/cambiar/actualizar un nombre de un archivo a otro.
 `rm <fileName.ext>` | Comando para eliminar un archivo que se encuentra dentro de tu directorio actual.
-`rm -r <directoryName>` | Comando para eliminar un archivo que se encuentra dentro de tu directorio actual.
+`rm -r <directoryName>` | Comando para eliminar un directorio/carpeta que se encuentra dentro del directorio actual.
 `clear` | Comando para limpiar la pantalla de tu terminal. En algunas terminales se utiliza `cls`.
 `git <comand> -h` | Comando para ver las "opciones" de configuración del comando Git definido en "`<comand>`".
 
