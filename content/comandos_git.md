@@ -1,6 +1,6 @@
 ## Aplicando Git en nuestro proyecto
 
-Continuando con el jercicio anterior y consdierando que nuestra terminal esta posicionada en la carpeta `pagina_web`, vamos a:
+Continuando con el ejercicio anterior y considerando que nuestra terminal esta posicionada en la carpeta `pagina_web`, vamos a:
 
 <br><hr>
 
@@ -58,9 +58,9 @@ Untracked files:
         styles.css
 
 ```
-Al observar lo anterior, notaremos que ahora `index.html` está "listo" para ser "*commiteado*" o confirmad, es decir, realizar la foto "instanátena" para captura el estado actual de dicho archivo y que posteriormente se pueda consultar dicho estado en cualquier otro momento.  
+Al observar lo anterior, notaremos que ahora `index.html` está "listo" para ser "*commiteado*" o confirmado, es decir, ahora podremos tomar la foto "instantánea" para captura el estado actual y sus cambios para que posteriormente se pueda consultar dicho estado en cualquier otro momento.  
 
-Por otro lado, seguimos viendo que `README.md` y `styles.css` aún se encuentran fuera del seguimiento de Git (siguen en el *Working Directory*), por lo que es necesario pasarlos al *staging area* para que Git pueda llevar el seguimiento de estos archivos.  
+Por otro lado, seguimos viendo que `README.md` y `styles.css` aún se encuentran fuera del seguimiento de Git (siguen en el *Working Directory*), por lo que es necesario pasarlos al *Staging Area* para que Git pueda llevar el seguimiento de estos archivos.  
 Pero en este caso son sólo dos archivos, que pasaría si tuviéramos que agregar 10 o 15 o más archivos, esto sería un poco laborioso al tener que agregar archivo por archivo. Para ello exiten los comandos `git add .` y `git add -A`, ambos comandos agregarán todos los archivos que se encuentran en el *Working Directory* al *Staging Area*, vamos a verlo:  
 
 Ejecutemos:
