@@ -1,6 +1,6 @@
 ## Creando nuestros primeros ***commits***
 
-Ahro vamos a validar los conceptos de la confirmación de cambios en nuestro proyecto.  
+Ahora vamos a validar los conceptos de la confirmación de cambios en nuestro proyecto.  
 
 Recapitulando, en nuestra carpeta de `pagina_web` habíamos creado tres archivos:
 1. `index.html`
@@ -63,9 +63,9 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
-Esto quiere decir que nuestro archivo `index.hmtl` ha sufridocambioos y Git lo tiene el la etapa de *Working Directory* y listo para que sea agregado a la etapa de *Staging Area*.  
+Esto quiere decir que nuestro archivo `index.hmtl` ha sufrido cambioos y Git lo tiene en la etapa de *Working Directory* y listo para que sea agregado a la etapa de *Staging Area*.  
 
-💣 ***Reto*** 💣 Agrega el archivo `index.html` a la etapa de "Staging area"  
+💣 ***Reto*** 💣 Agrega el archivo `index.html` a la etapa de "Staging Area"  
 
 Ahora revisemos el estado de nuestro proyecto: `git status`, obtendremos algo similar a esto:
 ```powershell
@@ -87,11 +87,11 @@ On branch main
 nothing to commit, working tree clean
 
 ```
-💣 ***Reto*** 💣 Agrega contenido a los archivos restantes: `styles.css` y `README.md`. En la modificación de cada archivo que consideres hayas finalizado, realiza lo siguiente:
-1. Verifica el estado actual del proyecto
-2. Agrega el archivo modificado al *Staging Area*
-3. Verifica el estado actual del proyecto (*puedes hacer uso del comando `git diff`, observa el resultado*)
-4. Realiza la confirmación (*commit*) de los cambios realizados junto con su mensaje correspondiente
-5. Verifica el estado actual del proyecto
+💣 ***Reto*** 💣 Agrega contenido a los archivos restantes: `styles.css` y `README.md`. Al finalizar la modificación de cada archivo, realiza lo siguiente (esto debes hacerlo por cada archivo):
+1. Verifica el estado actual del proyecto.
+2. Agrega el archivo modificado al *Staging Area*.
+3. Verifica el estado actual del proyecto (*puedes hacer uso del comando `git diff`, observa el resultado*).
+4. Realiza la confirmación (*commit*) de los cambios realizados junto con su mensaje correspondiente.
+5. Verifica el estado actual del proyecto.
 
-***Excelente*** Hasta este punto hemos podido crear un proyecto básico para la creación de una página web y llevar un control de los cambios realizados en nuestros archivos. Ahora 
+***Excelente*** Hasta este punto hemos podido crear un proyecto básico para la creación de una página web y llevar un control de los cambios realizados en nuestros archivos. Ahora veremos algunos de los comandos más utilizados para una gestión de nuestro proyecto más afondo.
